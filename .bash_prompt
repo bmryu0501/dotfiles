@@ -1,0 +1,10 @@
+# Function to parse git branch
+parse_git_branch() {
+  if git rev-parse --is-inside-work-tree &>/dev/null; then
+    echo " ($(git branch 2>/dev/null | grep '*' | sed 's/* //'))"
+  fi
+}
+
+# Set PS1 to include custom prompt
+export PS1='\n\[\e[0;36m\]┌ \[\e[0;32m\]\w\[\e[0;33m\]$(parse_git_branch)\[\e[0;36m\] (\!)\[\e[0m\]\n\[\e[0;36m\]└ \t > \[\e[0m\]'
+
