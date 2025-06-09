@@ -18,7 +18,7 @@ sudo apt -y -qq install \
 git clone "https://github.com/VundleVim/Vundle.vim.git" "$HOME/.vim/bundle/Vundle.vim"
 cp "./vim/.vimrc" "$HOME/.vimrc"
 git clone "https://github.com/morhetz/gruvbox.git" "$HOME/.vim/bundle/gruvbox"
-vim -c 'PluginInstall' -c 'qa!'
+vim +PluginInstall +qa!
 
 # 5. set bash
 BASH_CONFIG_DIR="$HOME/dotfiles/bash"
